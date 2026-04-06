@@ -74,5 +74,14 @@ def validar_datos(registro):
                 return False
         
         return True
-            
+
+### Programa Principal
+validacion = True
+for registro in datos:
+    if not validar_datos(registro)
+        validacion = False
+        print("Hay un problema en alguno de los diccionarios")
+        break
+    
+
         
