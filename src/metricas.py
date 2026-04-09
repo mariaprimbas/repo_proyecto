@@ -20,9 +20,10 @@ def calcular_promedio_senal(datos_validos):
 
    for participante in datos_validos:
      for senal in participante["valor"]:
-	senal_int= int(senal)
-        suma+=senal_int
-        cantidad+=1
+       senal_int= int(senal)
+       suma+=senal_int
+       cantidad+=1
+       
   
    if cantidad==0:
      return 0
@@ -49,9 +50,9 @@ def calcular_maximo_senal(datos_validos):
 
    for participante in datos_validos:
      for valor in participante["valor"]:
-	valor_int= int(valor)
-        if maximo is None or valor>maximo:
-          maximo=valor
+       valor_int= int(valor)
+       if maximo is None or valor>maximo:
+         maximo=valor
    return maximo
 
 #funcion minimo
@@ -74,7 +75,7 @@ def calcular_minimo_senal(datos_validos):
 
    for participante in datos_validos:
      for valor in participante["valor"]:
-	valor_int= int(valor)
-        if minimo is None or valor_int<minimo:
-          minimo=valor
+       valor_int= int(valor)
+       if minimo is None or valor_int<minimo:
+         minimo=valor
    return minimo
