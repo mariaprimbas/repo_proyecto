@@ -20,8 +20,8 @@ def calcular_promedio_senal(datos_validos):
 
    for participante in datos_validos:
      for senal in participante["valor"]:
-       senal_int= int(senal)
-       suma+=senal_int
+       senal_float= float(senal)
+       suma+=senal_float
        cantidad+=1
        
   
@@ -50,7 +50,7 @@ def calcular_maximo_senal(datos_validos):
 
    for participante in datos_validos:
      for valor in participante["valor"]:
-       valor_int= int(valor)
+       valor_float= float(valor)
        if maximo is None or valor>maximo:
          maximo=valor
    return maximo
