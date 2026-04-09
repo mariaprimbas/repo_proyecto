@@ -46,7 +46,7 @@ def calcular_maximo_senal(datos_validos):
    """
    maximo= None
 
-    for participante in datos_validos:
+   for participante in datos_validos:
      for valor in participante["valor"]:
        if maximo is None or valor>maximo:
          maximo=valor
@@ -70,7 +70,7 @@ def calcular_minimo_senal(datos_validos):
    """
    minimo= None
 
-    for participante in datos_validos:
+   for participante in datos_validos:
      for valor in participante["valor"]:
        if minimo is None or valor<minimo:
          minimo=valor
