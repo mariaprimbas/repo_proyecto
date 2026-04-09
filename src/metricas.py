@@ -31,17 +31,17 @@ def calcular_promedio_senal(datos_validos):
 
 #funcion maximo
 def calcular_maximo_senal(datos_validos):
-  """
-    Calcular el maximo de los valores de la señal entre todos los participantes. 
+   """
+   Calcular el maximo de los valores de la señal entre todos los participantes. 
 
-    Parameters
-    ----------
-    datos_validos : list
+   Parameters
+   ----------
+   datos_validos : list
         Lista de datos de participantes (cada participante es un diccionario)
    
-    Returns
-    -------
-    float: numero que representa el maximo de la señal de todos los participantes.
+   Returns
+   -------
+   float: numero que representa el maximo de la señal de todos los participantes.
 
    """
    maximo = None
