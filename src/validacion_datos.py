@@ -14,7 +14,7 @@ def validar_numero(num):
     -------
     bool
         DESCRIPTION: True si se puede convertir a un número
-False en caso contrario
+	False en caso contrario
 
     '''
     try:
