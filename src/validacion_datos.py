@@ -23,7 +23,7 @@ def validar_numero(num):
     except:
         return False
         
-def validar_datos(registro):
+def validar_registro(registro):
     '''
     función que valida el tipo de dato y los valores de un diccionario
 
