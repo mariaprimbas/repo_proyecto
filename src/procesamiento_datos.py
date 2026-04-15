@@ -24,9 +24,9 @@ def filtrar_datos(datos, id_participante):
            raise ValueError("id invalido") 
            
    for dato in datos: 
-       ID = dato["id"]
+       id_f = dato["id"]
        try: 
-           if ID == id_participante: 
+           if id_f == id_participante: 
                filtrados.append(dato)
        except KeyError: 
                continue 
