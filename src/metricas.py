@@ -36,7 +36,7 @@ def calcular_promedio_senal(datos_validos):
    promedio=suma/cantidad
    return promedio
 
-#funcion maximo
+#funcion 2: maximo
 def calcular_maximo_senal(datos_validos):
    """
    Calcular el maximo de los valores de la señal entre todos los participantes. 
@@ -62,7 +62,7 @@ def calcular_maximo_senal(datos_validos):
          maximo=valor
    return maximo
 
-#funcion minimo
+#funcion 3: minimo
 def calcular_minimo_senal(datos_validos):
 
    """
@@ -89,7 +89,7 @@ def calcular_minimo_senal(datos_validos):
        if minimo is None or valor_int<minimo:
          minimo=valor
    return minimo
- 
+#funcion 4: calcular frecuencia y picos
 from src.utils_ecg import detectar_picos_qrs
 def calcular_fc_desde_datos(datos):
    tiempos = []
@@ -100,7 +100,8 @@ def calcular_fc_desde_datos(datos):
    picos = detectar_picos_qrs(tiempos, senal)
    frecuencia_picos=calcular_frecuencia_cardiaca(picos)
    return frecuencia_picos
-
+ 
+#funcion 5: calcula frecuencia cardiaca
 def calcular_frecuencia_cardiaca(picos):
     """
     Calcula la frecuencia cardíaca a partir de los tiempos de los picos detectados por otra funcion
