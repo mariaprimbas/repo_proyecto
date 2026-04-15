@@ -27,6 +27,6 @@ maximo= calcular_maximo_senal(datos_filtrados)
 picos= detectar_picos_qrs()
 fc= calcular_frecuencia_cardiaca(picos)
 
-resultado= (promedio, minimo, maximo)
+resultado= (promedio, minimo, maximo, fc)
 
 print(resultado)
