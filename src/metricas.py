@@ -92,13 +92,14 @@ def calcular_minimo_senal(datos_validos):
  
 from src.utils_ecg import detectar_picos_qrs
 def calcular_fc_desde_datos(datos):
-tiempos = []
-senal = []
-for d in datos:
-tiempos.append(d["tiempo"])
-senal.append(d["valor"])
-picos = detectar_picos_qrs(tiempos, senal)
-frecuencia_picos=calcular_frecuencia_cardiaca(picos)
-return frecuencia_picos
+   tiempos = []
+   senal = []
+   for d in datos:
+     tiempos.append(d["tiempo"])
+     senal.append(d["valor"])
+   picos = detectar_picos_qrs(tiempos, senal)
+   frecuencia_picos=calcular_frecuencia_cardiaca(picos)
+   return frecuencia_picos
 
-   
+def calcular_frecuencia_cardiaca(picos)
+
