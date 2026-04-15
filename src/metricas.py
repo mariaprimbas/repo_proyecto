@@ -101,5 +101,35 @@ def calcular_fc_desde_datos(datos):
    frecuencia_picos=calcular_frecuencia_cardiaca(picos)
    return frecuencia_picos
 
-def calcular_frecuencia_cardiaca(picos)
+def calcular_frecuencia_cardiaca(picos):
+    """
+    Calcula la frecuencia cardíaca a partir de los tiempos de los picos detectados por otra funcion
+
+    Parameters
+    ----------
+    picos : list
+        Lista de tiempos donde ocurren los picos
+
+    Returns
+    -------
+    float: frecuencia cardíaca en latidos por minuto
+    """
+
+    if len(picos) < 2:
+        raise ValueError("No hay suficientes picos para calcular frecuencia cardíaca")
+
+    intervalos = []
+
+    for i in range(1, len(picos)):
+        intervalo = picos[i] - picos[i - 1]
+        intervalos.append(intervalo)
+
+    promedio_intervalo = sum(intervalos) / len(intervalos)
+
+    if promedio_intervalo == 0:
+        raise ValueError("Intervalo inválido")
+
+    frecuencia = 60 / promedio_intervalo
+
+    return frecuencia
 
