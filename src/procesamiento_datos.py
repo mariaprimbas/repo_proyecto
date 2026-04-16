@@ -18,20 +18,16 @@ def filtrar_datos(datos, id_participante):
 
    """
 
-   filtrados = []
+   dicc_filtrados = {}
    id_participantes = int(id_participante)
    if id_participantes <= 0: 
-           raise ValueError("id invalido") 
+      raise ValueError("id invalido") 
            
    for dato in datos: 
-       id_f = dato["id"]
-       try: 
-           if id_f == id_participantes: 
-               filtrados.append(dato)
-       except KeyError: 
-               continue 
-            
-   dicc_filtrados = {"id_participante": id_participantes, "datos": filtrados}
+      id_f = dato["id"]
+      if id_f == id_participantes: 
+         dicc_filtrados.append(dato)
+   
     
    return dicc_filtrados
 
