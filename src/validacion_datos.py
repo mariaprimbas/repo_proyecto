@@ -20,8 +20,8 @@ def validar_numero(num):
     try:
         float(num)
         return True
-	except ValueError as e:
-		print("Error, ingreso inválido", e)
+    except ValueError as e:
+        print("Error, ingreso inválido", e)
         return False
 	
 def validar_registro(registro):
@@ -60,7 +60,7 @@ def validar_registro(registro):
             try: 
                 if len(lista) == 0:
                     return False
-			except TypeError as e:
+            except TypeError as e:
                 print("Los datos deben ser listas",e)
                 return False
          
