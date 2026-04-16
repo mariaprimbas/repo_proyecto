@@ -20,7 +20,7 @@ def validar_numero(num):
     try:
         float(num)
         return True
-    except ValueError as e:
+	except ValueError as e:
         print("Error, ingreso inválido", e)
         return False
 	
