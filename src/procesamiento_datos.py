@@ -14,7 +14,7 @@ def filtrar_datos(datos, id_participante):
 
     Returns
     -------
-    dict: diccionario con el id del participante y los datos filtrados 
+    dict: diccionario con los datos filtrados del id buscado
 
    """
 
