@@ -18,6 +18,7 @@ def filtrar_datos(datos):
 
    while True:
       id_participante= input("Ingrese ID del participante o -todos- para analizar todos los participantes")
+      pregunta = input("Desea seguir preguntando? ")
       if id_participante=="todos":
          return datos
       elif id_participante.isdigit():
@@ -37,6 +38,7 @@ def filtrar_datos(datos):
          raise ValueError("Dato ingresado no valido")
          continue
    
-    
+       if pregunta == "No": 
+          break 
 
 
