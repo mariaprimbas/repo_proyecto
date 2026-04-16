@@ -16,8 +16,7 @@ datos_validos= []
 for registro in datos:
     if validar_registro(registro):
         datos_validos.append(registro)
-
-
+    
 datos_filtrados= filtrar_datos(datos_validos)
 
 promedio= calcular_promedio_senal(datos_filtrados)
