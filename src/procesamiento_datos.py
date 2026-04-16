@@ -38,7 +38,7 @@ def filtrar_datos(datos):
          raise ValueError("Dato ingresado no valido")
          continue
    
-       if pregunta == "No": 
-          break 
+      if pregunta == "No": 
+         break 
 
 
