@@ -30,8 +30,12 @@ def filtrar_datos(datos):
                id_f = participante["id"]
                if id_f == id_participante_int: 
                   return [participante]
+               else:
+                  print("ID no encontrado. Intente nuevamente")
+                  continue
       else:
          raise ValueError("Dato ingresado no valido")
+         continue
    
     
 
