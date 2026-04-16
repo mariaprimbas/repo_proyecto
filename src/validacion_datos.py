@@ -18,8 +18,8 @@ def validar_numero(num):
 
     '''
     try:
-        float(num)
-        return True
+		float(num)
+		return True
 	except ValueError as e:
         print("Error, ingreso inválido", e)
         return False
