@@ -17,7 +17,7 @@ def filtrar_datos(datos):
    """
 
    while True:
-      id_participante= input("Ingrese ID del participante o "todos" para analizar todos los participantes")
+      id_participante= input("Ingrese ID del participante o -todos- para analizar todos los participantes")
       if id_participante=="todos":
          return datos
       elif id_participante.isdigit():
