@@ -7,8 +7,8 @@ def calcular_promedio_senal(datos_filtrados):
 
     Parameters
     ----------
-    datos_filtrados : dict
-        Diccionario de datos del participante (del que se busco el id)
+    datos_filtrados : lista
+        lista de Diccionario de datos del participante buscado, o de todos 
    
     Returns
     -------
@@ -18,19 +18,23 @@ def calcular_promedio_senal(datos_filtrados):
    if len(datos_filtrados) == 0:
         raise ValueError("No hay datos para calcular el promedio") 
 
-   suma=0
-   cantidad=0
+  lista_prom_elemento= []
+  for elemento in datos_filtrados:
+     suma=0
+     cantidad=0
 
-   for senal in datos_filtrados["valor"]:
-      suma+=senal
-      cantidad+=1
-       
+     for senal in datos_filtrados["valor"]:
+        suma+=senal
+        cantidad+=1
+     promedio=suma/cantidad
+     if cantidad == 0:
+        raise ValueError("No hay valores de señal")
+     else:
+      lista_prom_elemento.append(promedio)
   
-   if cantidad == 0:
-      raise ValueError("No hay valores de señal")
-  
-   promedio=suma/cantidad
-   return promedio
+   promedio_todos=sum(lista_prom_elemento)/len(lista_prom_elemento)
+
+  return promedio_todos
 
 #funcion 2: maximo
 def calcular_maximo_senal(datos_filtrados):
