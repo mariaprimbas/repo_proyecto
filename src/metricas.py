@@ -1,7 +1,7 @@
 # Funciones para cálculo de métricas
  
 #funcion 1: promedio señal
-def calcular_promedio_senal(datos_validos):
+def calcular_promedio_senal(datos_filtrados):
    """
     Calcular el promedio de los valores de la señal entre todos los participantes. 
 
@@ -15,7 +15,7 @@ def calcular_promedio_senal(datos_validos):
     float: numero que representa el promedio de la señal de todos los participantes, o 0 si no hay datos válidos.
 
    """
-   if len(datos_validos) == 0:
+   if len(datos_filtrados) == 0:
         raise ValueError("No hay datos para calcular el promedio") 
 
    suma=0
