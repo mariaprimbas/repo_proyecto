@@ -3,16 +3,16 @@
 #funcion 1: promedio señal
 def calcular_promedio_senal(datos_filtrados):
    """
-    Calcular el promedio de los valores de la señal entre todos los participantes. 
+    Calcular el promedio de los valores de la señal del participante. 
 
     Parameters
     ----------
-    datos_validos : list
-        Lista de datos de participantes (cada participante es un diccionario)
+    datos_filtrados : dict
+        Diccionario de datos del participante (del que se busco el id)
    
     Returns
     -------
-    float: numero que representa el promedio de la señal de todos los participantes, o 0 si no hay datos válidos.
+    float: numero que representa el promedio de la señal del participante, o 0 si no hay datos válidos.
 
    """
    if len(datos_filtrados) == 0:
@@ -39,55 +39,53 @@ def calcular_promedio_senal(datos_filtrados):
 #funcion 2: maximo
 def calcular_maximo_senal(datos_filtrados):
    """
-   Calcular el maximo de los valores de la señal entre todos los participantes. 
+   Calcular el maximo de los valores de la señal del participante. 
 
    Parameters
    ----------
-   datos_validos : list
-        Lista de datos de participantes (cada participante es un diccionario)
+   datos_filtrados : dict
+        diccioanrio de datos del participante
+        
    
-   Returns
+   Returns   
    -------
-   float: numero que representa el maximo de la señal de todos los participantes.
+   float: numero que representa el maximo de la señal del participante
 
    """
    if len(datos_filtrados) == 0:
         raise ValueError("No hay datos para calcular el máximo")
 
-   maximo = None
-
-   for participante in datos_filtrados:
-     for valor in participante["valor"]:
-       if maximo is None or valor>maximo:
-         maximo=valor
+   maximo= None
+   valor= datos_filtrados["valor"]
+   valor_int= int(valor)
+   if maximo is None or valor_int>maximo:
+      maximo=valor
    return maximo
 
 #funcion 3: minimo
 def calcular_minimo_senal(datos_filtrados):
 
    """
-   Calcular el minimo de los valores de la señal entre todos los participantes. 
+   Calcular el minimo de los valores de la señal del participante
 
    Parameters
    ----------
-   datos_validos : list
-        Lista de datos de participantes (cada participante es un diccionario)
+   datos_filtrados : dict
+        diccionario de datos del participante
    
    Returns
    -------
-   float: numero que representa el minimo de la señal de todos los participantes.
+   float: numero que representa el minimo de la señal del participante
 
    """
    if len(datos_filtrados) == 0:
         raise ValueError("No hay datos para calcular el minimo")
 
    minimo= None
-
-   for participante in datos_filtrados:
-     for valor in participante["valor"]:
-       valor_int= int(valor)
-       if minimo is None or valor_int<minimo:
-         minimo=valor
+   valor= datos_filtrados["valor"]
+   valor_int= int(valor)
+   if minimo is None or valor_int<minimo:
+      minimo=valor
    return minimo
 #funcion 4: calcular frecuencia y picos
 from src.utils_ecg import detectar_picos_qrs
