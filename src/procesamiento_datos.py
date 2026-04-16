@@ -1,16 +1,14 @@
 
 # Funciones para procesamiento de datos
 
-def filtrar_datos(datos, id_participante):
+def filtrar_datos(datos):
    """
     Filtrar los datos procesados por participante a partir de su id. 
 
     Parameters
     ----------
     datos : list
-        Lista de datos de participantes
-    id_participante : int
-        Numero de id del participante
+        Lista de datos de un participante, o todos los participantes
 
     Returns
     -------
@@ -18,17 +16,23 @@ def filtrar_datos(datos, id_participante):
 
    """
 
-   dicc_filtrados = {}
-   id_participantes = int(id_participante)
-   if id_participantes <= 0: 
-      raise ValueError("id invalido") 
+   while True:
+      id_participante= input("Ingrese ID del participante o "todos" para analizar todos los participantes")
+      if id_participante=="todos":
+         return datos
+      elif id_participante.isdigit():
+      
+            id_participante_int = int(id_participante)
+            if id_participante_int <= 0: 
+               raise ValueError("id invalido") 
            
-   for dato in datos: 
-      id_f = dato["id"]
-      if id_f == id_participantes: 
-         dicc_filtrados.append(dato)
+            for participante in datos: 
+               id_f = participante["id"]
+               if id_f == id_participante_int: 
+                  return [participante]
+      else:
+         raise ValueError("Dato ingresado no valido")
    
     
-   return dicc_filtrados
 
 
