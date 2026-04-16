@@ -15,12 +15,14 @@ def filtrar_datos(datos):
     dict: diccionario con los datos filtrados del id buscado
 
    """
-
+   datos_filtrados=[]
    while True:
       id_participante= input("Ingrese ID del participante o -todos- para analizar todos los participantes")
       pregunta = input("Desea seguir preguntando? ")
       if id_participante=="todos":
-         return datos
+         datos_filtrados.append[datos]
+         break
+         
       elif id_participante.isdigit():
       
             id_participante_int = int(id_participante)
@@ -30,7 +32,8 @@ def filtrar_datos(datos):
             for participante in datos: 
                id_f = participante["id"]
                if id_f == id_participante_int: 
-                  return [participante]
+                  datos_filtrados.append(participante)
+                  break
                else:
                   print("ID no encontrado. Intente nuevamente")
                   continue
@@ -41,4 +44,5 @@ def filtrar_datos(datos):
       if pregunta == "No": 
          break 
 
+   return datos_filtrados
 
