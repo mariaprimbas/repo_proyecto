@@ -21,17 +21,17 @@ def calcular_promedio_senal(datos_filtrados):
    suma=0
    cantidad=0
 
-   for participante in datos_filtrados:
-    if "valor" not in participante:
-            raise ValueError("Falta la clave 'valor' en los datos")
+  
+   if "valor" not in datos_filtrados:
+      raise ValueError("Falta la clave 'valor' en los datos")
 
-    for senal in participante["valor"]:
-       suma+=senal
-       cantidad+=1
+   for senal in datos_filtrados["valor"]:
+      suma+=senal
+      cantidad+=1
        
   
    if cantidad == 0:
-        raise ValueError("No hay valores de señal")
+      raise ValueError("No hay valores de señal")
   
    promedio=suma/cantidad
    return promedio
