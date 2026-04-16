@@ -39,7 +39,7 @@ def cargar_datos(ruta_archivo):
         valor = float(partes[2])
         fase = partes[3]
         condicion_experimental = partes[4]
-        hit = int(partes[5])
+        hit = partes[5]
 
         if id_participante not in participantes:
             participantes[id_participante] = {
