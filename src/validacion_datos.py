@@ -21,9 +21,9 @@ def validar_numero(num):
         float(num)
         return True
 	except ValueError as e:
-		print("Error ingreso inválido, el id deben ser enteros", e)
+		print("Error, ingreso inválido", e)
         return False
-        
+	
 def validar_registro(registro):
     '''
     función que valida el tipo de dato y los valores de un diccionario
