@@ -17,9 +17,9 @@ for registro in datos:
     if validar_registro(registro):
         datos_validos.append(registro)
 
-id_participante = input("Ingrese un id: ")
 
-datos_filtrados= filtrar_datos(datos_validos, id_participante)
+datos_filtrados= filtrar_datos(datos_validos)
+
 promedio= calcular_promedio_senal(datos_filtrados)
 minimo= calcular_minimo_senal(datos_filtrados)
 maximo= calcular_maximo_senal(datos_filtrados)
