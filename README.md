@@ -17,8 +17,8 @@ Manejo de errores:
 - metricas: se encarga de revisar que los valores sean los adecuados para calcular promedio, mínimo, máximo. Percibe algunos de tipo ValueError.
 - procesamiento: verificar que el id ingresado sea valido y agregar la informacion a la lista si hay tal. 
 - cargar_datos:
-Corregi la lectura del archivo porque el dataset no tiene encabezado.
-Corregi el uso de id_participante para que siempre sea un número y no haya errores.
-Corregi la validacion de las lineas
-Corregi como se guardan los datos para que se agrupen bien por participante.
-Corregi un par de errores en el codigo
+se corrigio la lectura del archivo porque el dataset no tiene encabezado.
+Se corrigio el uso de id_participante para que siempre sea un número y no haya errores.
+Se corrigio la validacion de las lineas
+Se corrigio como se guardan los datos para que se agrupen bien por participante.
+Se corrigio un par de errores en el codigo
