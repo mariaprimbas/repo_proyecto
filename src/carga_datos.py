@@ -21,7 +21,7 @@ def cargar_datos(ruta_archivo):
         lineas = archivo.readlines()
         archivo.close()
     except FileNotFoundError:
-        print("Error: no se encontró el archivo.")
+        print("ERROR CRITICO: no se encontró el archivo.- Ubicacion: carga_datos")
         return []
 
     for linea in lineas:
@@ -31,7 +31,7 @@ def cargar_datos(ruta_archivo):
         partes = parsear_linea(linea)
 
         if len(partes) != 6:
-            print("Error: línea mal formada:", linea.strip())
+            print("ERROR CRITICO: línea mal formada:", linea.strip())
             continue
 
         id_participante = int(partes[0])
