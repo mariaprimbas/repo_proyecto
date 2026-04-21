@@ -22,3 +22,4 @@ Se corrigio el uso de id_participante para que siempre sea un número y no haya 
 Se corrigio la validacion de las lineas
 Se corrigio como se guardan los datos para que se agrupen bien por participante.
 Se corrigio un par de errores en el codigo
+Se implementaron validaciones de archivo, formato, tipos de datos, y valores, con manejo de errores
