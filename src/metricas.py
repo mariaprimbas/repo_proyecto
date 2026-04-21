@@ -23,20 +23,21 @@ def calcular_promedio_senal(datos_filtrados):
       suma=0
       cantidad=0
 
-      for senal in datos_filtrados["valor"]:
+      for senal in elemento["valor"]:
          suma+=senal
          cantidad+=1
-      promedio=suma/cantidad
-    
-      if cantidad == 0:
-         raise ValueError("No hay valores de señal")
-      else:
+       
+         if cantidad == 0:
+            raise ValueError("No hay valores de señal")
+       
+
+         promedio = suma / cantidad
          lista_prom_elemento.append(promedio)
+
+    promedio_todos = sum(lista_prom_elemento) / len(lista_prom_elemento)
+
+    return promedio_todos
   
-   promedio_todos=sum(lista_prom_elemento)/len(lista_prom_elemento)
-
-   return promedio_todos
-
 #funcion 2: maximo
 def calcular_maximo_senal(datos_filtrados):
    """
