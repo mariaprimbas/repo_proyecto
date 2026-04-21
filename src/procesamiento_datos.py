@@ -28,7 +28,7 @@ def filtrar_datos(datos):
       
             id_participante_int = int(id_participante)
             if id_participante_int <= 0: 
-               raise ValueError("id invalido") 
+               raise ValueError("ERROR CRITICO: id invalido- Ubicacion: filtrar_datos in procesamiento_datos") 
                
             encontrado = False 
          
@@ -43,7 +43,7 @@ def filtrar_datos(datos):
                print("ID no encontrado. Intente nuevamente")
             
       else:
-         raise ValueError("Dato ingresado no valido")
+         raise ValueError("ERROR CRITICO: Dato ingresado no valido - Ubicacion: filtrar_datos in procesamiento_datos")
          continue
    
       if pregunta == "No": 
