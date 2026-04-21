@@ -16,7 +16,7 @@ def calcular_promedio_senal(datos_filtrados):
 
    """
    if len(datos_filtrados) == 0:
-        raise ValueError("No hay datos para calcular el promedio") 
+        raise ValueError("ERROR CRITICO: No hay datos para calcular el promedio- Ubicacion: calcular_promedio_senal in metricas") 
 
    lista_prom_elemento= []
    for elemento in datos_filtrados:
@@ -28,7 +28,7 @@ def calcular_promedio_senal(datos_filtrados):
          cantidad+=1
        
          if cantidad == 0:
-            raise ValueError("No hay valores de señal")
+            raise ValueError("ERROR CRITICO: No hay valores de señal- Ubicacion: calcular_promedio_senal in metricas")
        
 
          promedio = suma / cantidad
@@ -46,7 +46,7 @@ def calcular_maximo_senal(datos_filtrados):
    Parameters
    ----------
    datos_filtrados : dict
-        diccioanrio de datos del participante
+        diccionario de datos del participante
         
    
    Returns   
@@ -55,7 +55,7 @@ def calcular_maximo_senal(datos_filtrados):
 
    """
    if len(datos_filtrados) == 0:
-        raise ValueError("No hay datos para calcular el máximo")
+        raise ValueError("ERROR CRITICO: No hay datos para calcular el máximo - Ubicacion: calcular_maximo_senal in metricas")
 
    maximo= None
    for elemento in datos_filtrados:
@@ -82,7 +82,7 @@ def calcular_minimo_senal(datos_filtrados):
 
    """
    if len(datos_filtrados) == 0:
-        raise ValueError("No hay datos para calcular el minimo")
+        raise ValueError("ERROR CRITICO: No hay datos para calcular el minimo- Ubicacion: calcular_minimo_senal in metricas")
 
    minimo= None
    for elemento in datos_filtrados:
@@ -119,7 +119,7 @@ def calcular_frecuencia_cardiaca(picos):
     """
 
     if len(picos) < 2:
-        raise ValueError("No hay suficientes picos para calcular frecuencia cardíaca")
+        raise ValueError("ERROR CRITICO: No hay suficientes picos para calcular frecuencia cardíaca - Ubicacion: calcular_frecuencia_cardiaca in metricas")
 
     intervalos = []
 
@@ -130,7 +130,7 @@ def calcular_frecuencia_cardiaca(picos):
     promedio_intervalo = sum(intervalos) / len(intervalos)
 
     if promedio_intervalo == 0:
-        raise ValueError("Intervalo inválido")
+        raise ValueError("ERROR CRITICO: Intervalo inválido   - Ubicacion: calcular_frecuencia_cardiaca in metricas")
 
     frecuencia = 60 / promedio_intervalo
 
