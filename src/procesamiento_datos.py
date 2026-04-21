@@ -18,31 +18,37 @@ def filtrar_datos(datos):
    datos_filtrados=[]
    while True:
       id_participante= input("Ingrese ID del participante o -todos- para analizar todos los participantes")
-      pregunta = input("Desea seguir preguntando? ")
+     
       if id_participante=="todos":
-         datos_filtrados.append[datos]
+         datos_filtrados.append(datos)
          break
          
       elif id_participante.isdigit():
+            
       
             id_participante_int = int(id_participante)
             if id_participante_int <= 0: 
                raise ValueError("id invalido") 
-           
+               
+            encontrado = False 
+         
             for participante in datos: 
                id_f = participante["id"]
                if id_f == id_participante_int: 
                   datos_filtrados.append(participante)
+                  encontrado = True
                   break
-               else:
-                  print("ID no encontrado. Intente nuevamente")
-                  continue
+               
+            if encontrado == False: 
+               print("ID no encontrado. Intente nuevamente")
+            
       else:
          raise ValueError("Dato ingresado no valido")
          continue
    
       if pregunta == "No": 
          break 
-
+         
+      pregunta = input("Desea seguir preguntando? ")
    return datos_filtrados
 
