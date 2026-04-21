@@ -21,7 +21,7 @@ def validar_numero(num):
         float(num)
         return True
     except ValueError: 
-        raise ValueError("El valor debe ser un número")
+        raise ValueError("ERROR CRITICO: El valor debe ser un número - Ubicacion: validar_numero in vallidacion_datos")
 	
 def validar_registro(registro):
     '''
@@ -61,7 +61,7 @@ def validar_registro(registro):
                 if len(lista) == 0:
                     return False
             except TypeError:
-                raise TypeError("Los datos deben ser listas")
+                raise TypeError("ERROR CRITICO: Los datos deben ser listas- Ubicacion: validar_registro in validacion_datos")
          
      ### validar valores
         for t in tiempo:
