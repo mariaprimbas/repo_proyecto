@@ -100,7 +100,9 @@ def calcular_fc_desde_datos(datos):
    senal = []
    for d in datos:
      tiempos.append(d["tiempo"])
-     senal.append(d["valor"])
+     for sen in d["valor"]:
+         if sen.isdigit():
+            senal.append(d["valor"])
    picos = detectar_picos_qrs(tiempos, senal)
    frecuencia_picos=calcular_frecuencia_cardiaca(picos)
    return frecuencia_picos
@@ -133,8 +135,9 @@ def calcular_frecuencia_cardiaca(picos):
 
     if promedio_intervalo == 0:
         raise ValueError("ERROR CRITICO: Intervalo inválido   - Ubicacion: calcular_frecuencia_cardiaca in metricas")
-
+    if promedio_intervalo<0:
+        raise ValueError("ERROR CRITICO: Intervalo inválido   - Ubicacion: calcular_frecuencia_cardiaca in metricas")
     frecuencia = 60 / promedio_intervalo
-
+    
     return frecuencia
 
