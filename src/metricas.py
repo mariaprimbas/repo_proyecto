@@ -34,9 +34,9 @@ def calcular_promedio_senal(datos_filtrados):
          promedio = suma / cantidad
          lista_prom_elemento.append(promedio)
 
-    promedio_todos = sum(lista_prom_elemento) / len(lista_prom_elemento)
+      promedio_todos = sum(lista_prom_elemento) / len(lista_prom_elemento)
 
-    return promedio_todos
+   return promedio_todos
   
 #funcion 2: maximo
 def calcular_maximo_senal(datos_filtrados):
