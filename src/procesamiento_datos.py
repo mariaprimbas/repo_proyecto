@@ -46,7 +46,7 @@ def filtrar_datos(datos):
          continue
       pregunta = input("Desea seguir preguntando? ")
      
-      if pregunta == "No": 
+      if pregunta.lower() == "no": 
          break 
          
    return datos_filtrados
