@@ -32,7 +32,7 @@ def filtrar_datos(datos):
             encontrado = False 
          
             for participante in datos: 
-               id_f = participante["id"]
+               id_f = participante["id_participante"]
                if id_f == id_participante_int: 
                   datos_filtrados.append(participante)
                   encontrado = True
