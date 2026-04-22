@@ -21,6 +21,6 @@ minimo= calcular_minimo_senal(datos_filtrados)
 maximo= calcular_maximo_senal(datos_filtrados)
 fc= calcular_fc_desde_datos(datos_filtrados)
 
-resultado= (promedio, minimo, maximo, fc)
+resultado= (f"El promedio es {promedio}, el mínimo es {minimo}, el maximo es {maximo}, y la frecuencia cardíaca es {fc}")
 
 print(resultado)
