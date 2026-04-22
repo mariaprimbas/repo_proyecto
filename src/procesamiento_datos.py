@@ -44,7 +44,7 @@ def filtrar_datos(datos):
       else:
          raise ValueError("ERROR CRITICO: Dato ingresado no valido - Ubicacion: filtrar_datos in procesamiento_datos")
          continue
-      pregunta = input("Desea seguir preguntando? ")
+      pregunta = input("Desea seguir buscando un participante? ")
      
       if pregunta == "No": 
          break 
