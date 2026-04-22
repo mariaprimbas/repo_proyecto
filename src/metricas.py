@@ -99,10 +99,14 @@ def calcular_fc_desde_datos(datos):
    tiempos = []
    senal = []
    for d in datos:
-     tiempos.append(d["tiempo"])
-     for sen in d["valor"]:
-         if sen.isdigit():
-            senal.append(d["valor"])
+       try:
+           for t in d["tiempo"]:
+               tiempos.append(t)
+           for s in d["valor"]:
+               senal.append(float(s))
+    
+       except:
+               raise ValueError("Error Crítico: las señales deben ser números")
    picos = detectar_picos_qrs(tiempos, senal)
    frecuencia_picos=calcular_frecuencia_cardiaca(picos)
    return frecuencia_picos
