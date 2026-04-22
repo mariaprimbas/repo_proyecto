@@ -17,7 +17,7 @@ def filtrar_datos(datos):
    """
    datos_filtrados=[]
    while True:
-      id_participante= input("Ingrese ID del participante o -todos- para analizar todos los participantes")
+      id_participante= input("Ingrese ID del participante o -todos- para analizar todos los participantes: ")
      
       if id_participante=="todos":
          datos_filtrados.append(datos)
@@ -41,14 +41,14 @@ def filtrar_datos(datos):
                
             if encontrado == False: 
                print("ID no encontrado. Intente nuevamente")
-            
+                 
       else:
          raise ValueError("ERROR CRITICO: Dato ingresado no valido - Ubicacion: filtrar_datos in procesamiento_datos")
          continue
-   
+      pregunta = input("Desea seguir preguntando? ")
+     
       if pregunta == "No": 
          break 
          
-      pregunta = input("Desea seguir preguntando? ")
    return datos_filtrados
 
