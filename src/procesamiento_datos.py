@@ -20,7 +20,7 @@ def filtrar_datos(datos):
       id_participante= input("Ingrese ID del participante o -todos- para analizar todos los participantes: ")
      
       if id_participante=="todos":
-         return datos
+         datos_filtrados = datos
          
       elif id_participante.isdigit():
             
