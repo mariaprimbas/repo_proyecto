@@ -23,3 +23,12 @@ Se corrigio la validacion de las lineas
 Se corrigio como se guardan los datos para que se agrupen bien por participante.
 Se corrigio un par de errores en el codigo
 Se implementaron validaciones de archivo, formato, tipos de datos, y valores, con manejo de errores
+
+Objetos:
+En el caso de la programación orienatda a objetos (POO) plantearíamos 2 clases:
+1. Participante
+   - Atributos: id, tiempo, valor, fase, condicion experimental y hit
+   - Métodos: init, agregar_registro
+2. Investigador
+   - Atributos: clase Participante
+   - Métodos: init, carga_de_datos, filtrado, calcular_promedio, calcular_picos, calcular_frecuencia_cardíaca, mostrar_respuestas
