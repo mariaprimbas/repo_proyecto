@@ -59,10 +59,11 @@ def calcular_maximo_senal(datos_filtrados):
 
    maximo= None
    for elemento in datos_filtrados:
-       valor= elemento["valor"]
-       valor_int= int(valor)
-       if maximo is None or valor_int>maximo:
-          maximo=valor_int
+       valores = elemento["valor"]
+       for valor in valores: 
+           valor_int= int(valor)
+           if maximo is None or valor_int>maximo:
+               maximo=valor_int
    return maximo
 
 #funcion 3: minimo
@@ -86,10 +87,11 @@ def calcular_minimo_senal(datos_filtrados):
 
    minimo= None
    for elemento in datos_filtrados:
-       valor= elemento["valor"]
-       valor_int= int(valor)
-       if minimo is None or valor_int<minimo:
-          minimo=valor_int
+       valores = elemento["valor"]
+       for valor in valores: 
+           valor_int = int(valor)
+           if minimo is None or valor_int<minimo:
+               minimo=valor_int
    return minimo
 #funcion 4: calcular frecuencia y picos
 from src.utils_ecg import detectar_picos_qrs

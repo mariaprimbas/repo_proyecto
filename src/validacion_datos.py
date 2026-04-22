@@ -44,6 +44,7 @@ def validar_registro(registro):
         if claves not in registro:
             print("Falta información de cada participante")
             return False
+            raise ValueError("ERROR CRITICO: Falta alguna clave en el diccionario - Ubicacion: validar_registro in validacion_datos")
         
         id_p = registro["id_participante"]
         tiempo = registro["tiempo"]
