@@ -32,3 +32,7 @@ En el caso de la programación orienatda a objetos (POO) plantearíamos 2 clases
 2. Investigador
    - Atributos: clase Participante
    - Métodos: init, carga_de_datos, filtrado, calcular_promedio, calcular_picos, calcular_frecuencia_cardíaca, mostrar_respuestas
+
+Pandas:
+Para introducir la librería Pandas en nuestro trabajo lo haríamos a partir del método pandas.read_csv(). De esta forma se permite acceder al archivo a través de un DataFrame, lo que sintetiza y organiza mejor la información. Como consecuencia, la función parsear_linea() dejaría de requerirse porque la librería Pandas lo realiza por su cuenta. Así pues, la función que se vería más afectada es cargar_datos() que ahora ingresaría a los datos a partir de las columnas del DataFrame. 
+En este contexto sería útil la herramienta iloc, ya que nos permitiría poder setear las filas a partir de los id del participante (data.set_index(‘id_participante’) y etiquetar los datos de cada categoría cómo columnas; y así acceder con mayor facilidad. De esta forma, también se sintetiza tareas de la función métricas, cómo sacar el mínimo o máximo que se puede realizar a través de los métodos data[colA].min() o data[colA].max()
