@@ -1,6 +1,6 @@
 #Programa Principal 
 
-
+import pandas as pd
 from src.carga_datos import cargar_datos
 from src.metricas import calcular_minimo_senal
 from src.metricas import calcular_maximo_senal
@@ -8,14 +8,12 @@ from src.metricas import calcular_promedio_senal
 from src.procesamiento_datos import filtrar_datos
 from src.metricas import calcular_fc_desde_datos
 
-datos= cargar_datos("datos/PulseLab_mock_data.csv")
+ruta_archivo = "datos/PulseLab_mock_data.csv"
 
-datos_validos= []
-
-for registro in datos:
-    datos_validos.append(registro)
-    
-datos_filtrados= filtrar_datos(datos_validos)
+df = pd.read_csv(ruta_archivo)
+df_indice = df.set_index("id_participante")
+  
+datos_filtrados= filtrar_datos(df)
 promedio= calcular_promedio_senal(datos_filtrados)
 minimo= calcular_minimo_senal(datos_filtrados)
 maximo= calcular_maximo_senal(datos_filtrados)
