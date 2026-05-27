@@ -1,18 +1,20 @@
 
 # Funciones para procesamiento de datos
 
-def filtrar_datos(datos):
+def filtrar_datos(datos, id_participante):
    """
-    Filtrar los datos procesados por participante a partir de su id. 
+    Filtrar los datos de un Dataframe por participante a partir de su id. 
 
     Parameters
     ----------
-    datos : list
-        Lista de datos de un participante, o todos los participantes
-
+    datos : DataFrame
+      Dataframe con datos de los participantes 
+    id_participante: int
+      id ingresado que define los datos del participante que quiere filtrar 
+      
     Returns
     -------
-    dict: diccionario con los datos filtrados del id buscado
+    Dataframe: datos filtrados 
 
    """
    datos_filtrados=[]
