@@ -17,19 +17,12 @@ def filtrar_datos(df, id_participante):
     Dataframe: datos filtrados 
 
    """
-   if id_participante == "todos": 
-      return datos 
-   while True:
-      id_participante= input("Ingrese ID del participante o -todos- para analizar todos los participantes: ")
-     
-      if id_participante=="todos":
-         datos_filtrados = df
+   if id_participante=="todos":
+      datos_filtrados = df
 
-      elif: 
-         datos_filtrados = df[df["id_participante"] == id_participante]
-      else: 
-         print("Id no encontrado")
+   else: 
+      datos_filtrados = df[df["id_participante"] == id_participante]
 
-      return datos_filtrados 
+   return datos_filtrados 
          
    
