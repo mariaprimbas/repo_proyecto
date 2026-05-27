@@ -12,8 +12,10 @@ ruta_archivo = "datos/PulseLab_mock_data.csv"
 
 df = pd.read_csv(ruta_archivo)
 df_indice = df.set_index("id_participante")
-  
-datos_filtrados= filtrar_datos(df)
+
+id_participante = int(input("Ingrese el id del participante del que desea los datos: "))
+
+datos_filtrados= filtrar_datos(df, id_participante)
 promedio= calcular_promedio_senal(datos_filtrados)
 minimo= calcular_minimo_senal(datos_filtrados)
 maximo= calcular_maximo_senal(datos_filtrados)
