@@ -2,41 +2,39 @@
  
 #funcion 1: promedio señal
 def calcular_promedio_senal(datos_filtrados):
-   """
-    Calcular el promedio de los valores de la señal del participante. 
+    """
+    Calcula el promedio de los valores de señal.
 
     Parameters
     ----------
-    datos_filtrados : lista
-        lista de Diccionario de datos del participante buscado, o de todos 
-   
+    datos_filtrados : dataframe 
+        DataFrame con datos de uno o varios participantes.
+
     Returns
     -------
-    float: numero que representa el promedio de la señal del participante, o 0 si no hay datos válidos.
+    float
+        Promedio de la señal.
 
-   """
-   if len(datos_filtrados) == 0:
-        raise ValueError("ERROR CRITICO: No hay datos para calcular el promedio- Ubicacion: calcular_promedio_senal in metricas") 
+    Raises
+    ------
+    ValueError
+        Si no hay datos para calcular el promedio.
+    """
 
-   lista_prom_elemento= []
-   for elemento in datos_filtrados:
-      suma=0
-      cantidad=0
+    if datos_filtrados.empty:
+        raise ValueError(
+            "ERROR CRITICO: No hay datos para calcular el promedio"
+        )
 
-      for senal in elemento["valor"]:
-         suma+=senal
-         cantidad+=1
-       
-         if cantidad == 0:
-            raise ValueError("ERROR CRITICO: No hay valores de señal- Ubicacion: calcular_promedio_senal in metricas")
-       
+    cantidad = datos_filtrados["valor"].count()
 
-         promedio = suma / cantidad
-         lista_prom_elemento.append(promedio)
+    if cantidad == 0:
+        raise ValueError(
+            "ERROR CRITICO: No hay valores de señal"
+        )
+    promedio = datos_filtrados["valor"].mean()
 
-      promedio_todos = sum(lista_prom_elemento) / len(lista_prom_elemento)
-
-   return promedio_todos
+    return promedio
   
 #funcion 2: maximo
 def calcular_maximo_senal(datos_filtrados):
