@@ -38,59 +38,78 @@ def calcular_promedio_senal(datos_filtrados):
   
 #funcion 2: maximo
 def calcular_maximo_senal(datos_filtrados):
-   """
-   Calcular el maximo de los valores de la señal del participante. 
+    """
+    Calcula el máximo de los valores de señal.
 
-   Parameters
-   ----------
-   datos_filtrados : dict
-        diccionario de datos del participante
-        
-   
-   Returns   
-   -------
-   float: numero que representa el maximo de la señal del participante
+    Parameters
+    ----------
+    datos_filtrados : dataframe
+        DataFrame con datos de uno o varios participantes.
 
-   """
-   if len(datos_filtrados) == 0:
-        raise ValueError("ERROR CRITICO: No hay datos para calcular el máximo - Ubicacion: calcular_maximo_senal in metricas")
+    Returns
+    -------
+    float
+        Máximo de la señal.
 
-   maximo= None
-   for elemento in datos_filtrados:
-       valores = elemento["valor"]
-       for valor in valores: 
-           valor_int= int(valor)
-           if maximo is None or valor_int>maximo:
-               maximo=valor_int
-   return maximo
+    Raises
+    ------
+    ValueError
+        Si no hay datos para calcular el máximo.
+    """
+
+    if datos_filtrados.empty:
+        raise ValueError(
+            "ERROR CRITICO: No hay datos para calcular el máximo"
+        )
+
+    cantidad = datos_filtrados["valor"].count()
+
+    if cantidad == 0:
+        raise ValueError(
+            "ERROR CRITICO: No hay valores de señal"
+        )
+
+    maximo = datos_filtrados["valor"].max()
+
+    return maximo
 
 #funcion 3: minimo
 def calcular_minimo_senal(datos_filtrados):
+    """
+    Calcula el minimo de los valores de señal.
 
-   """
-   Calcular el minimo de los valores de la señal del participante
+    Parameters
+    ----------
+    datos_filtrados : dataframe
+        DataFrame con datos de uno o varios participantes.
 
-   Parameters
-   ----------
-   datos_filtrados : dict
-        diccionario de datos del participante
-   
-   Returns
-   -------
-   float: numero que representa el minimo de la señal del participante
+    Returns
+    -------
+    float
+        minimo de la señal.
 
-   """
-   if len(datos_filtrados) == 0:
-        raise ValueError("ERROR CRITICO: No hay datos para calcular el minimo- Ubicacion: calcular_minimo_senal in metricas")
+    Raises
+    ------
+    ValueError
+        Si no hay datos para calcular el minimo.
+    """
 
-   minimo= None
-   for elemento in datos_filtrados:
-       valores = elemento["valor"]
-       for valor in valores: 
-           valor_int = int(valor)
-           if minimo is None or valor_int<minimo:
-               minimo=valor_int
-   return minimo
+    if datos_filtrados.empty:
+        raise ValueError(
+            "ERROR CRITICO: No hay datos para calcular el minimo"
+        )
+
+    cantidad = datos_filtrados["valor"].count()
+
+    if cantidad == 0:
+        raise ValueError(
+            "ERROR CRITICO: No hay valores de señal"
+        )
+
+    minimo = datos_filtrados["valor"].min()
+
+    return minimo
+
 #funcion 4: calcular frecuencia y picos
 from src.utils_ecg import detectar_picos_qrs
 def calcular_fc_desde_datos(datos):
