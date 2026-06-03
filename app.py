@@ -1,7 +1,7 @@
 
 import streamlit as st
 
-from src.carga_datos import cargar_datos_streamlit
+from src.metricas import cargar_datos_streamlit
 
 from src.procesamiento_datos import (filtrar_por_participante_pandas)
 
