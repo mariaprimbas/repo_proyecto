@@ -202,5 +202,4 @@ if archivo is not None:
                     st.error(
                         f"Error al generar gráficos: {e}"
                     )
-app.py
-Mostrando app.py.
+
