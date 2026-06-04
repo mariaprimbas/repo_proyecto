@@ -1,5 +1,5 @@
 # Funciones para cálculo de métricas
- 
+import pandas as pd 
 #funcion 1: promedio señal
 def calcular_promedio_senal(datos_filtrados):
     """
