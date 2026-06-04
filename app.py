@@ -1,4 +1,5 @@
 
+import pandas as pd
 import streamlit as st
 
 from src.metricas import cargar_datos_streamlit
