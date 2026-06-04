@@ -3,17 +3,15 @@ import streamlit as st
 
 from src.metricas import cargar_datos_streamlit
 
-from src.procesamiento_datos import (filtrar_por_participante_pandas)
+from src.procesamiento_datos import filtrar_datos
 
 from src.metricas import (
-    calcular_senal_promedio,
+    calcular_promedio_senal,
     calcular_maximo_senal,
     calcular_minimo_senal,
-    calcular_fc_desde_datos)
+    calcular_fc_desde_datos
+)
 
-from src.visualizaciones import (
-    graficar_promedio_por_condicion,
-    graficar_senal_temporal)
 
 # ---------------------------------------------------
 # CONFIGURACION PAGINA
